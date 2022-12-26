@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var pattern = /a/;
+
+        console.log(pattern.exec('abcdef'));    // ['a']
+        console.log(pattern.exec('bcdefg'));    // null
+
+        console.log(pattern.test('abcdef'));    // true
+        console.log(pattern.test('bcdefg'));    // false
+
+        var str1 = 'abcdef';
+        var str2 = 'bcdefg';
+        console.log(str1.match(pattern));   // ['a']
+        console.log(str2.match(pattern));   // null
+
+        console.log(str1.replace(pattern, 'A'));    // Abcdef
+
+    </script>
+</body>
+</html>

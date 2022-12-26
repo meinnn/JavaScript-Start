@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Person(name) {
+            this.name = name;
+        }
+        // prototype: 약속되어 있는 특수한 property 
+        Person.prototype.name = null;
+        Person.prototype.introduce = function() {
+            return 'My name is ' + this.name;
+        }
+
+        function Programmer(name) {
+            this.name = name;
+        }
+        // 상속
+        Programmer.prototype = new Person();
+        // 상속 객체에 새로운 메소드 추가
+        Programmer.prototype.coding = function(){
+            return "hello world";
+        }
+
+        var p1 = new Person('hi');
+        document.write(p1.introduce() + "<br />");
+        var p2 = new Programmer('mein');
+        document.write(p2.introduce() + "<br />");
+        document.write(p2.coding() + "<br />");
+    </script>
+</body>
+</html>

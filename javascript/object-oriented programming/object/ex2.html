@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        Object.prototype.contain = function(needle) {
+            for (var name in this) {
+                if (this[name] ===needle) {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        var o = {'name':'mein', 'city':'seoul'};
+        console.log(o.contain('mein'));
+        var a = ['mein', 'hi', 'im'];
+        console.log(a.contain('hi'));
+
+        for (var name in a) {
+            console.log(name);  
+            // 0
+            // 1
+            // 2
+            // contain !!!!!! Object 확장 않는 것이 바람직
+        }
+
+        for (var name in a){
+            if (a.hasOwnProperty(name)){    // 객체에 직접적으로 정의되어 있는가
+                console.log(name);
+            }
+            // 0
+            // 1
+            // 2
+        }
+    </script>
+</body>
+</html>

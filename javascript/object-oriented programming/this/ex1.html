@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 함수 호출
+        function func(){
+            if (window === this) {
+                document.write("window === this <br />");
+            }
+        }
+        func();     // window === this
+
+        // 메소드 호출
+        var o = {
+            func : function() {
+                if (o === this) {
+                    document.write("o === this <br />");
+                }
+            }
+        }
+        o.func();   // o === this
+    </script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // i 붙이면 대소문자를 구분하지 않음
+        var xi = /a/;
+        console.log("Abcde".match(xi));     // null
+        var oi = /a/i;
+        console.log("Abcde".match(oi));     // ['A']
+
+        // g 붙이면 검색된 모든 결과를 return 함
+        var xg = /a/;
+        console.log("abcdea".match(xg));    // ['a']
+        var og = /a/g;
+        console.log("abcdea".match(og));    // ['a', 'a']
+
+        var ig = /a/ig;
+        console.log("AabcdeaA".match(ig));  // ['A', 'a', 'a', 'A']
+        
+    </script>
+</body>
+</html>
